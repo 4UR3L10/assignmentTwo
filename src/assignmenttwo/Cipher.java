@@ -2,18 +2,19 @@ package assignmenttwo;
 
 import java.util.StringTokenizer;
 
-public abstract class Cipher 
+public abstract class Cipher
 {
+
     private String message;
     StringBuffer encrypted_message, decrypted_message;
 
-    public Cipher(String text) 
+    public Cipher(String text)
     {
         // Complete the constructor definition
         this.message = text;  // ADDEDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
     }
 
-    public final void encrypt() 
+    public final void encrypt()
     {
         /*
          * The message string is tokenized into individual words, and each word is
@@ -21,7 +22,7 @@ public abstract class Cipher
          */
         encrypted_message = new StringBuffer();
         StringTokenizer words = new StringTokenizer(message);
-        while (words.hasMoreTokens()) 
+        while (words.hasMoreTokens())
         {
             String s = words.nextToken();
             s = encode(s) + " ";
@@ -38,11 +39,13 @@ public abstract class Cipher
         // Supply the code that will decrypt the encrypted string
     }
 
-    public String getEncodedMessage() {
+    public String getEncodedMessage()
+    {
         return encrypted_message.toString();
     }
 
-    public String getDecodedMessage() {
+    public String getDecodedMessage()
+    {
         return decrypted_message.toString();
     }
 
